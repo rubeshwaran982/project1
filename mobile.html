@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FaithStream - Religious Streaming Platform</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#4f46e5;
+    --secondary:#6366f1;
+    --dark:#0f172a;
+    --light:#f8fafc;
+    --text:#475569;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    width:100%;
+    overflow-x:hidden;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:var(--text);
+    overflow-x:hidden;
+    padding-top:70px;
+    width:100%;
+    margin:0;
+}
+
+.navbar{
+    padding:15px 0;
+    background:#fff;
+    box-shadow:0 2px 20px rgba(0,0,0,.05);
+}
+
+.navbar-brand{
+    font-weight:700;
+    color:var(--primary)!important;
+}
+
+.btn-primary-custom{
+    background:var(--primary);
+    color:#fff;
+    border:none;
+    padding:12px 30px;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.btn-primary-custom:hover{
+    background:#3730a3;
+    color:#fff;
+}
+
+.hero{
+    background:linear-gradient(
+    135deg,
+    #eef2ff 0%,
+    #ffffff 100%);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:50px;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    font-weight:700;
+    color:var(--dark);
+}
+
+.hero p{
+    font-size:1.1rem;
+}
+
+.hero-image{
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+}
+
+.section-title{
+    font-size:2.4rem;
+    font-weight:700;
+    color:var(--dark);
+}
+
+.feature-card{
+    border:none;
+    border-radius:18px;
+    padding:30px;
+    transition:.4s;
+    height:100%;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+}
+
+.feature-icon{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#eef2ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.stats{
+    background:var(--primary);
+    color:white;
+}
+
+.counter{
+    font-size:3rem;
+    font-weight:700;
+}
+
+.device-box{
+    background:white;
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.device-box ul{
+    gap:12px;
+}
+
+.list-group-item{
+    padding:16px 18px !important;
+    font-size:1.05rem;
+    font-weight:500;
+    border:none;
+    background:transparent;
+    color:var(--text);
+}
+
+.testimonial{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    min-height: 240px;
+}
+
+.testimonial p{
+    font-size:1rem;
+    line-height:1.8;
+    color:#334155;
+}
+
+.testimonial h6{
+    margin-top:1.4rem;
+    font-size:1rem;
+    font-weight:700;
+    color:var(--dark);
+}
+
+.testimonial small{
+    display:block;
+    margin-top:.35rem;
+    color:#64748b;
+}
+
+.form-control{
+    padding:14px;
+    border-radius:12px;
+}
+
+footer{
+    background:var(--dark);
+    color:#cbd5e1;
+}
+
+footer a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+
+footer a:hover{
+    color:white;
+}
+
+.section-padding{
+    padding:90px 0;
+}
+
+.accordion{
+    gap:15px;
+}
+
+.accordion-item{
+    background:white;
+    border:none;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    margin-bottom:12px;
+}
+
+.accordion-button{
+    padding:16px 20px;
+    font-weight:600;
+    font-size:1rem;
+    background:white;
+    color:var(--dark);
+    border:none;
+}
+
+.accordion-button:not(.collapsed){
+    background:var(--primary);
+    color:white;
+    box-shadow:none;
+}
+
+.accordion-button:focus{
+    box-shadow:none;
+    border:none;
+}
+
+.accordion-body{
+    padding:14px 20px;
+    font-size:0.95rem;
+    color:var(--text);
+    line-height:1.6;
+}
+
+@media(max-width:991px){
+
+.hero{
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+.hero p{
+    font-size:1rem;
+}
+
+.hero-image{
+    margin-top:40px;
+}
+
+.section-padding{
+    padding:60px 20px;
+}
+
+.section-title{
+    font-size:1.8rem;
+}
+
+.feature-card{
+    padding:20px;
+}
+
+.testimonial{
+    padding:20px;
+    min-height:auto;
+}
+
+.device-box{
+    padding:20px;
+}
+
+.list-group-item{
+    padding:12px 15px !important;
+}
+
+}
+
+@media(max-width:768px){
+
+body{
+    padding-top:60px;
+}
+
+.navbar{
+    padding:10px 0;
+}
+
+.navbar-collapse.collapse.show{
+    display:flex !important;
+    flex-direction:column;
+    align-items:center;
+}
+
+.navbar-nav{
+    display:flex;
+    flex-direction:column;
+    text-align:center !important;
+    justify-content:center !important;
+    align-items:center !important;
+    margin:0 auto !important;
+    width:100%;
+    margin-left:0 !important;
+}
+
+.navbar-nav .nav-item{
+    width:100%;
+}
+
+.nav-link{
+    margin:0;
+    padding:10px 0;
+    width:100%;
+}
+
+.navbar-collapse .btn-primary-custom{
+    display:block;
+    width:auto;
+    padding:10px 20px !important;
+    font-size:0.9rem !important;
+    margin:15px 0 0 0 !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+}
+
+.hero h1{
+    font-size:1.8rem;
+}
+
+.hero p{
+    font-size:0.9rem;
+}
+
+.section-title{
+    font-size:1.5rem;
+}
+
+.feature-card{
+    padding:15px;
+}
+
+.counter{
+    font-size:2rem;
+}
+
+.testimonial{
+    padding:15px;
+}
+
+}
+
+@media(min-width:2000px){
+
+.section-padding{
+    padding:60px 0;
+}
+
+.hero{
+    padding-top:30px;
+    min-height:80vh;
+}
+
+.hero h1{
+    font-size:4.5rem;
+}
+
+.hero p{
+    font-size:1.3rem;
+}
+
+.section-title{
+    font-size:3rem;
+}
+
+.feature-card{
+    padding:40px;
+}
+
+.testimonial{
+    padding:35px;
+}
+
+.device-box{
+    padding:40px;
+}
+
+.list-group-item{
+    padding:18px 20px !important;
+}
+
+.counter{
+    font-size:4rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container">
+
+<a class="navbar-brand" href="#">
+FaithStream
+</a>
+
+<button class="navbar-toggler"
+data-bs-toggle="collapse"
+data-bs-target="#navbarNav">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse"
+id="navbarNav">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="#features">Features</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#devices">Devices</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#testimonials">Testimonials</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#faq">FAQ</a>
+</li>
+
+</ul>
+
+<a href="#contact"
+class="btn btn-primary-custom ms-lg-3">
+Request Demo
+</a>
+
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+<h1>
+Launch Your Religious Streaming Platform
+</h1>
+
+<p class="my-4">
+Deliver sermons, live worship, conferences,
+spiritual content, and faith-based media to
+audiences worldwide across every device.
+</p>
+
+<div class="d-flex gap-3 flex-wrap">
+
+<a href="#contact"
+class="btn btn-primary-custom">
+Book Demo
+</a>
+
+<a href="#features"
+class="btn btn-primary-custom">
+Explore Features
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="hero-image">
+
+<img
+src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1200"
+class="img-fluid"
+alt="Streaming Platform">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section id="features"
+class="section-padding">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+Platform Features
+</h2>
+
+<p>
+Everything required to build a modern faith-based OTT service.
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-4">
+<div class="feature-card">
+
+<div class="feature-icon">
+📺
+</div>
+
+<h5>Live Streaming</h5>
+
+<p>
+Broadcast worship events and sermons in real time.
+</p>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+<div class="feature-card">
+
+<div class="feature-icon">
+🎬
+</div>
+
+<h5>Video On Demand</h5>
+
+<p>
+Organize and monetize your spiritual content library.
+</p>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+<div class="feature-card">
+
+<div class="feature-icon">
+💳
+</div>
+
+<h5>Subscriptions</h5>
+
+<p>
+Recurring membership and donation-based access.
+</p>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+<div class="feature-card">
+
+<div class="feature-icon">
+📱
+</div>
+
+<h5>Mobile Apps</h5>
+
+<p>
+iOS and Android app support for viewers.
+</p>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+<div class="feature-card">
+
+<div class="feature-icon">
+🌎
+</div>
+
+<h5>Global Delivery</h5>
+
+<p>
+Reach audiences worldwide using CDN technology.
+</p>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+<div class="feature-card">
+
+<div class="feature-icon">
+📊
+</div>
+
+<h5>Analytics</h5>
+
+<p>
+Track engagement, subscribers, and content performance.
+</p>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- STATS -->
+
+<section class="stats section-padding">
+
+<div class="container">
+
+<div class="row text-center">
+
+<div class="col-md-3">
+<h2 class="counter" data-target="1000">0</h2>
+<p>Organizations</p>
+</div>
+
+<div class="col-md-3">
+<h2 class="counter" data-target="500000">0</h2>
+<p>Monthly Viewers</p>
+</div>
+
+<div class="col-md-3">
+<h2 class="counter" data-target="150">0</h2>
+<p>Countries</p>
+</div>
+
+<div class="col-md-3">
+<h2 class="counter" data-target="99">0</h2>
+<p>Uptime %</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DEVICES -->
+
+<section id="devices"
+class="section-padding"
+style="padding:120px 0;">
+
+<div class="container">
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-6">
+
+<img
+src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200"
+class="img-fluid rounded-4"
+alt="Devices">
+
+</div>
+
+<div class="col-lg-6 ps-lg-4">
+
+<h2 class="section-title">
+Watch Anywhere
+</h2>
+
+<p class="mb-4" style="margin-bottom:2rem !important;font-size:1.1rem;line-height:1.7;">
+Support every major screen and operating system.
+</p>
+
+<div class="device-box">
+
+<ul class="list-group list-group-flush">
+
+<li class="list-group-item">
+✔ Smart TVs
+</li>
+
+<li class="list-group-item">
+✔ Android TV
+</li>
+
+<li class="list-group-item">
+✔ Roku
+</li>
+
+<li class="list-group-item">
+✔ Fire TV
+</li>
+
+<li class="list-group-item">
+✔ iOS & Android
+</li>
+
+<li class="list-group-item">
+✔ Web Browsers
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section id="testimonials"
+class="section-padding bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+<h2 class="section-title">
+Client Testimonials
+</h2>
+<p class="text-secondary mt-3">
+Trusted by ministries, churches, and faith-led creators across the world.
+</p>
+<div class="mt-4">
+  <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?w=1200&q=80" class="img-fluid rounded-4 mx-auto d-block" style="max-width: 400px;" alt="Community worship service">
+</div>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="testimonial">
+<p>
+"The platform transformed our online ministry. The live broadcast quality is flawless and our congregation engagement has skyrocketed."
+</p>
+<h6>Pastor David</h6>
+<small>Hope Community Church</small>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="testimonial">
+<p>
+"Excellent streaming quality and easy management. The analytics dashboard makes it simple to understand viewer behavior."
+</p>
+<h6>Faith Network</h6>
+<small>Digital Media Team</small>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="testimonial">
+<p>
+"Helped us reach believers around the globe, especially during holidays when our in-person services are full."
+</p>
+<h6>Global Ministry</h6>
+<small>International Outreach</small>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="testimonial">
+<p>
+"The mobile app support is outstanding — our members can worship from any device without hassle."
+</p>
+<h6>Sister Grace</h6>
+<small>Living Faith Center</small>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="testimonial">
+<p>
+"Onboarding was fast, and the support team helped us go live within days. Perfect for our church and charity events."
+</p>
+<h6>Rev. Matthew</h6>
+<small>Hope & Light Foundation</small>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="testimonial">
+<p>
+"The hybrid service setup is seamless, giving our congregation the best mix of livestream and on-demand content."
+</p>
+<h6>Church of Joy</h6>
+<small>Creative Director</small>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+
+<section id="faq"
+class="faq-section section-padding">
+
+<div class="container">
+
+<div class="text-center mb-5">
+<h2 class="section-title">
+Frequently Asked Questions
+</h2>
+</div>
+
+<div style="max-width:700px;margin:0 auto;">
+<div class="accordion" id="faqAccordion">
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button"
+data-bs-toggle="collapse"
+data-bs-target="#faq1">
+
+Can I livestream worship services?
+
+</button>
+
+</h2>
+
+<div id="faq1"
+class="accordion-collapse collapse show">
+
+<div class="accordion-body">
+Yes, with adaptive streaming support.
+</div>
+
+</div>
+
+</div>
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button collapsed"
+data-bs-toggle="collapse"
+data-bs-target="#faq2">
+
+Can I monetize content?
+
+</button>
+
+</h2>
+
+<div id="faq2"
+class="accordion-collapse collapse">
+
+<div class="accordion-body">
+Subscriptions, donations, and memberships are supported.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact"
+class="form-section section-padding">
+
+<div class="container">
+
+<div class="row justify-content-center">
+
+<div class="col-lg-8">
+
+<div class="card border-0 shadow-lg">
+
+<div class="card-body p-5">
+
+<h2 class="text-center text-dark mb-4">
+Request a Demo
+</h2>
+
+<form>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<input type="text"
+class="form-control"
+placeholder="Name"
+required>
+</div>
+
+<div class="col-md-6 mb-3">
+<input type="email"
+class="form-control"
+placeholder="Email"
+required>
+</div>
+
+<div class="col-md-6 mb-3">
+<input type="text"
+class="form-control"
+placeholder="Organization"
+required>
+</div>
+
+<div class="col-md-6 mb-3">
+<input type="tel"
+class="form-control"
+placeholder="Phone"
+required>
+</div>
+
+<div class="col-12 mb-3">
+<textarea
+class="form-control"
+rows="5"
+placeholder="Message"></textarea>
+</div>
+
+<div class="col-12 text-center">
+<button
+type="submit"
+class="btn btn-primary-custom">
+Submit Request
+</button>
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="py-5">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-4">
+
+<h5>FaithStream</h5>
+
+<p>
+Modern OTT streaming platform for faith-based organizations.
+</p>
+
+</div>
+
+<div class="col-md-4">
+
+<h5>Quick Links</h5>
+
+<ul class="list-unstyled">
+
+<li><a href="#">Home</a></li>
+<li><a href="#">Features</a></li>
+<li><a href="#">Pricing</a></li>
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div class="col-md-4">
+
+<h5>Contact</h5>
+
+<p>
+hello@faithstream.com
+</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="text-center">
+© 2026 FaithStream. All Rights Reserved.
+</div>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+// Smooth Scroll
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener('click',function(e){
+
+e.preventDefault();
+
+const target=document.querySelector(this.getAttribute('href'));
+
+if(target){
+target.scrollIntoView({
+behavior:'smooth'
+});
+}
+
+});
+
+});
+
+// Counter Animation
+
+const counters=document.querySelectorAll('.counter');
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+const counter=entry.target;
+const target=+counter.dataset.target;
+
+let count=0;
+
+const speed=target/100;
+
+const update=()=>{
+
+count+=speed;
+
+if(count<target){
+
+counter.innerText=Math.floor(count);
+requestAnimationFrame(update);
+
+}else{
+
+counter.innerText=
+target.toLocaleString();
+
+}
+
+};
+
+update();
+
+observer.unobserve(counter);
+
+}
+
+});
+
+});
+
+counters.forEach(counter=>{
+observer.observe(counter);
+});
+
+</script>
+
+</body>
+</html>
